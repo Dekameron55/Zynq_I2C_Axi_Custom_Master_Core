@@ -27,14 +27,14 @@ This repository contains all the necessary components to simulate, synthesize, a
 ```
 ZYNQ_I2C_Axi_Master_Core/
 ├── fpga/
-|   ├── i2c_fpga_axi_tb/    # Vivado test bench simulation between PS and PL using Axi VIP.
-|   ├── i2c_fpga_axi_custom/ # Verilog source files for FPGA specific Zynq synthesis.
-│   ├── i2c_rtl/            # Verilog source files for the IP core
-│   └── i2c_rtl_tb/         # Testbench for pure RTL simulation
-└── software/
-    ├── i2c_axi_master/     # C driver for the IP core
-    └── hdc1080/            # Example device driver (HDC1080) using the I2C master
-    └── /.../               # Main main.c Application and PS support source code
+|   ├── i2c_fpga_axi_tb/        # Vivado test bench simulation between PS and PL using Axi VIP.
+|   ├── i2c_fpga_axi_custom/    # Verilog source files for FPGA specific Zynq synthesis.
+│   ├── i2c_rtl/                # Verilog source files for the IP core
+│   └── i2c_rtl_tb/             # Testbench for pure RTL simulation
+└── software/   
+    ├── i2c_axi_master/         # C driver for the IP core
+    └── hdc1080/                # Example device driver (HDC1080) using the I2C master
+    └── /.../                   # Main main.c Application and PS support source code
 ```
 
 
