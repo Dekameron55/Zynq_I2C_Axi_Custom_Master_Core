@@ -20,7 +20,7 @@ This project provides a custom solution for I2C communication on Zynq-based syst
 ## Project Contents
 
 The repository is organized into two main directories:
-This repository contains all the necessary components to simulate, synthesize, and use the AXI I2C Master IP. The entire project is provided "as is" (see the [Disclaimer](#disclaimer) at the end of this document for details) and is organized into the following directories:
+This repository contains all the necessary components to simulate, synthesize, and use the custom i2c master IP. The entire project is provided "as is" (see the [Disclaimer](#disclaimer) at the end of this document for details) and is organized into the following directories:
 
 ## Project Structure
 
