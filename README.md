@@ -89,8 +89,7 @@ The IP core comes with a Verilog testbench (`fpga/i2c_rtl_tb`) for verifying the
 1.  Navigate to the testbench directory: `cd fpga/i2c_rtl_tb`
 2.  Compile the sources using Icarus Verilog (or a similar tool):
     ```sh
-    iverilog -g2012 -o design.vvp i2c_master_top_tb.sv i2c_slave_controller_sim.sv ..\rtl\i2c_master_top.v ..\rtl\i2c_core.v
-    ```
+     iverilog -g2012 -o design.vvp i2c_master_top_tb.sv i2c_slave_controller_sim.sv ..\i2c_rtl\i2c_master_top.v ..\i2c_rtl\i2c_core.v ..\i2c_rtl\i2c_timer.v    ```
 3.  Run the compiled simulation:
     ```sh
     vvp design.vvp
