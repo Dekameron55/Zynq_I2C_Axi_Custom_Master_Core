@@ -168,26 +168,32 @@ I2C_AXI_Status I2C_AXI_Master_Write(I2C_AXI_Master_Driver *InstancePtr, u8 Slave
 I2C_AXI_Status I2C_AXI_Master_Exchange(I2C_AXI_Master_Driver *InstancePtr, u8 SlaveAddr, u16 RegAddr, I2C_RegAddrWidth AddrWidth, u8 *ReadData, u16 ByteCount, u32 TimeoutMs);
 
 /**
- * @brief Perform a blocking, interrupt-driven, write-then-read exchange on the I2C bus.
+ * @brief Perform a non-blocking, interrupt-driven, write-then-read exchange on the I2C bus.
  * @param InstancePtr is a pointer to the I2C_AXI_Master_Driver instance.
  * @param SlaveAddr is the 7-bit address of the target slave device.
  * @param RegAddr is the register address to read from.
  * @param AddrWidth specifies if the register address is 8-bit or 16-bit.
  * @param ReadData is a pointer to the buffer where read data will be stored.
  * @param ByteCount is the number of bytes to read.
- * @return I2C_AXI_SUCCESS on success, I2C_AXI_NACK_ERROR on NACK, or I2C_AXI_INVALID_PARAM.
+ * @return I2C_AXI_SUCCESS if the transaction was started, I2C_AXI_BUSY if the core is busy.
+ * @note This is the recommended non-blocking function for production use. It starts the transaction and returns immediately.
+ * The application should rely on the ISR and callback mechanism to handle completion.
  */
 I2C_AXI_Status I2C_AXI_Master_Exchange_IT(I2C_AXI_Master_Driver *InstancePtr, u8 SlaveAddr, u16 RegAddr, I2C_RegAddrWidth AddrWidth, u8 *ReadData, u16 ByteCount);
 
 /**
  * @brief Perform a blocking, interrupt-driven, write-then-read exchange on the I2C bus.
+ * @deprecated This function is intended for debugging and will be removed in a future version.
  * @param InstancePtr is a pointer to the I2C_AXI_Master_Driver instance.
  * @param SlaveAddr is the 7-bit address of the target slave device.
  * @param RegAddr is the register address to read from.
  * @param AddrWidth specifies if the register address is 8-bit or 16-bit.
  * @param ReadData is a pointer to the buffer where read data will be stored.
  * @param ByteCount is the number of bytes to read.
- * @return I2C_AXI_SUCCESS on success, I2C_AXI_NACK_ERROR on NACK, or I2C_AXI_INVALID_PARAM.
+ * @return I2C_AXI_SUCCESS on success, I2C_AXI_NACK_ERROR on NACK.
+ * @note This function is a wrapper that calls the non-blocking `_IT` version and then polls on a global flag.
+ * It is useful for verifying that the ISR is being called correctly but should not be used in production code.
+ * For real-world applications, use the `I2C_AXI_Master_Exchange_IT` function with a proper callback handler.
  */
 I2C_AXI_Status I2C_AXI_Master_Exchange_Interrupt(I2C_AXI_Master_Driver *InstancePtr, u8 SlaveAddr, u16 RegAddr, I2C_RegAddrWidth AddrWidth, u8 *ReadData, u16 ByteCount);
 
@@ -208,17 +214,23 @@ I2C_AXI_Status I2C_AXI_Master_Read(I2C_AXI_Master_Driver *InstancePtr, u8 SlaveA
  * @param SlaveAddr is the 7-bit address of the target slave device.
  * @param ReadData is a pointer to the buffer where read data will be stored.
  * @param ByteCount is the number of bytes to read.
- * @return I2C_AXI_SUCCESS on success, I2C_AXI_NACK_ERROR on NACK.
+ * @return I2C_AXI_SUCCESS if the transaction was started, I2C_AXI_BUSY if the core is busy.
+ * @note This is the recommended non-blocking function for production use. It starts the transaction and returns immediately.
+ * The application should rely on the ISR and callback mechanism to handle completion.
  */
 I2C_AXI_Status I2C_AXI_Master_Read_IT(I2C_AXI_Master_Driver *InstancePtr, u8 SlaveAddr, u8 *ReadData, u16 ByteCount);
 
 /**
  * @brief Perform a blocking, interrupt-driven, read-only transaction on the I2C bus.
+ * @deprecated This function is intended for debugging and will be removed in a future version.
  * @param InstancePtr is a pointer to the I2C_AXI_Master_Driver instance.
  * @param SlaveAddr is the 7-bit address of the target slave device.
  * @param ReadData is a pointer to the buffer where read data will be stored.
  * @param ByteCount is the number of bytes to read.
  * @return I2C_AXI_SUCCESS on success, I2C_AXI_NACK_ERROR on NACK.
+ * @note This function is a wrapper that calls the non-blocking `_IT` version and then polls on a global flag.
+ * It is useful for verifying that the ISR is being called correctly but should not be used in production code.
+ * For real-world applications, use the `I2C_AXI_Master_Read_IT` function with a proper callback handler.
  */
 I2C_AXI_Status I2C_AXI_Master_Read_Interrupt(I2C_AXI_Master_Driver *InstancePtr, u8 SlaveAddr, u8 *ReadData, u16 ByteCount);
 

@@ -193,7 +193,11 @@ This is the low-level driver that directly interfaces with the IP core's registe
     *   `I2C_AXI_Master_Exchange()`: Performs a write-then-read (e.g., for reading from a specific register).
 *   **Interrupt-Driven Mode:** For more complex, non-blocking applications, the driver supports interrupt-driven transactions.
     *   The `I2C_AXI_Master_Init()` function can enable interrupts in the hardware core.
-    *   `I2C_AXI_Master_Exchange_Interrupt()` and `I2C_AXI_Master_Read_Interrupt()` are blocking functions that start a transaction and then wait on flags that are set by the Interrupt Service Routine (ISR).
+    *   **Non-Blocking (`_IT` suffix):** These are the recommended functions for production use. They start a transaction and return immediately, allowing the application to perform other tasks. Completion is handled via the ISR and an optional user callback.
+        *   `I2C_AXI_Master_Write_IT()`
+        *   `I2C_AXI_Master_Read_IT()`
+        *   `I2C_AXI_Master_Exchange_IT()`
+    *   **Blocking (`_Interrupt` suffix):** Functions like `I2C_AXI_Master_Exchange_Interrupt()` are blocking wrappers provided for debugging and simplicity. They call the non-blocking `_IT` version and then immediately enter a polling loop, waiting for a global flag set by the ISR. This is useful for verifying that the interrupt system is working but is inefficient for real-world applications. These functions will be deprecated in a future release.
     *   The driver provides an ISR (`I2C_AXI_Master_InterruptHandler`) that handles clearing interrupt flags and reading data from the RX FIFO.
     *   An application-specific callback can be registered using `I2C_AXI_Master_SetHandler()` to be notified of events like transaction completion or errors.
 *   **Error Handling:** All transaction functions return an `I2C_AXI_Status` enum, allowing the application to robustly handle conditions like `I2C_AXI_NACK_ERROR` and `I2C_AXI_TIMEOUT_ERROR`.
@@ -203,9 +207,10 @@ This is the low-level driver that directly interfaces with the IP core's registe
 This directory contains a higher-level driver for the Texas Instruments HDC1080 temperature and humidity sensor. It serves as a practical example of how to use the core I2C driver to build a device-specific library. It abstracts the I2C protocol details into simple, human-readable functions:
 
 *   `HDC1080_Init()`: Configures the sensor's resolution settings.
+*   `HDC1080_GetManufacturerID()`: Reads the static manufacturer ID to verify communication.
+*   `HDC1080_GetDeviceID()`: Reads the static device ID to verify communication.
 *   `HDC1080_GetTemperature()`: Triggers a temperature measurement, waits for the conversion time, and reads the result.
 *   `HDC1080_GetHumidity()`: Performs the same sequence for a humidity reading.
-*   `HDC1080_GetDeviceID()`: Reads the static device ID to verify communication.
 
 ### Driver Configuration and Error Handling
 
