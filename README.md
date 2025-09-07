@@ -17,17 +17,18 @@ This project provides a complete solution for I2C communication on Zynq-based sy
 
 > **Note:** A detailed hardware reference, including the register map, FIFO operation, and prescaler calculation, can be found in the [Register Map](#register-map) section at the end of this document.
 
-## Project Structure
 ## Project Contents
 
 The repository is organized into two main directories:
 This repository contains all the necessary components to simulate, synthesize, and use the AXI I2C Master IP. The entire project is provided "as is" (see the [Disclaimer](#disclaimer) at the end of this document for details) and is organized into the following directories:
 
+## Project Structure
+
 ```
 PYNQ_Z2_I2C_Axi_custom_ip/
 ├── fpga/
 |   ├── i2c_fpga_axi_tb/    # Vivado test bench simulation between PS and PL using Axi VIP.
-|   ├── i2c_fpga_axi/       # Verilog source files for FPGA Zynq synthesis
+|   ├── i2c_fpga_axi/       # Verilog source files for FPGA specific Zynq synthesis.
 │   ├── i2c_rtl/            # Verilog source files for the IP core
 │   └── i2c_rtl_tb/         # Testbench for pure RTL simulation
 └── software/
