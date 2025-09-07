@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module axi_i2c_custom_master #(
+module axi_i2c_master #(
     // AXI Parameters
     parameter integer C_S_AXI_DATA_WIDTH = 32,
     parameter integer C_S_AXI_ADDR_WIDTH = 8
