@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Sep 03 16:34:57 2025
+[*]
+[dumpfile] "C:\Projects\Verilog\I2C_Master\dump.vcd"
+[dumpfile_mtime] "Wed Sep 03 16:33:51 2025"
+[dumpfile_size] 53640224
+[savefile] "C:\Projects\Verilog\I2C_Master\setup1.gtkw"
+[timestart] 10637250000
+[size] 1920 1009
+[pos] -1 -1
+*-23.124216 10680125000 -1 87670 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] i2c_master_top_tb.
+[treeopen] i2c_master_top_tb.i2c_master_top_inst.
+[treeopen] i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.
+[sst_width] 343
+[signals_width] 307
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@420
+i2c_master_top_tb.sim_step
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.bit_count[3:0]
+i2c_master_top_tb.i2c_master_top_inst.tx_wr_ptr[11:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.byte_count[11:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.data_byte_count[11:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.DataRx_r[7:0]
+@28
+[color] 5
+i2c_master_top_tb.sda_bus
+[color] 2
+i2c_master_top_tb.scl_bus
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oe_scl
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oe_sda
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.i_sda
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.i_scl
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.ack_error
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.ack_bit
+@23
+i2c_master_top_tb.slave.index_pointer[10:0]
+[pattern_trace] 1
+[pattern_trace] 0

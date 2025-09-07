@@ -1,0 +1,27 @@
+run all
+[1225 ns] TB Step 40: --- Sanity Check: Reading Version Register ---
+SUCCESS: Version Register test passed. Read back is correct 0x00010200.
+[2255 ns] TB Step 50: Configuring I2C Master...
+[2515 ns] TB Step 60: --- Test 1: Indexed Write ---
+TB: Waiting for transaction to complete...
+TB: Indexed write complete.
+[77125 ns] TB Step 65: Checking and clearing ISR after Test 1...
+SUCCESS: ISR 'Done' bit is set after Test 1.
+SUCCESS: ISR 'Done' bit is cleared after Test 1.
+SUCCESS: Slave memory mem[5] is 0xBB.
+[87275 ns] TB Step 70: --- Test 3: Writing a 10-byte block to slave ---
+TB: Waiting for transaction to complete...
+TB: Block write complete.
+[368685 ns] TB Step 75: Checking and clearing ISR after Block Write...
+SUCCESS: ISR 'Done' bit is set after Block Write.
+SUCCESS: ISR 'Done' bit is cleared after Block Write.
+[378835 ns] TB Step 80: --- Reading back 10-byte block from slave ---
+TB: Waiting for transaction to complete...
+TB: Block read complete.
+[685095 ns] TB Step 85: Checking and clearing ISR after Block Read...
+SUCCESS: ISR 'Done' bit is set after Block Read.
+SUCCESS: ISR 'Done' bit is cleared after Block Read.
+SUCCESS: Block readback of 10 bytes verified correctly.
+[695545 ns] TB Step 90: All tests passed. Finishing simulation.
+Executing Axi4 End Of Simulation checks
+$finish called at time : 695545 ns :

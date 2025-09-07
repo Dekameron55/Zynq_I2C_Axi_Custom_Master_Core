@@ -1,0 +1,27 @@
+#######################################
+# Syntax Coloring Map ADCI2C
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+HYGROI2C	Keyword1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin			KEYWORD2
+writeRegI2C		KEYWORD2
+readRegI2C 		KEYWORD2
+getTemperature	KEYWORD2
+getHumidity		KEYWORD2
+tempC2F			KEYWORD2
+tempF2C			KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+HYGROI2C_I2C_ADDR	LITERAL1	
+HYGROI2C_TMP_REG	LITERAL1
+HYGROI2C_HUM_REG	LITERAL1
+HYGROI2C_CONFIG_REG	LITERAL1

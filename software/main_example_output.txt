@@ -1,0 +1,32 @@
+Testing Dummy Register...
+  SUCCESS: Dummy Register test passed.
+Reading Version Register...
+  SUCCESS: Version Register test passed. Read back 0x00010200
+HDC1080 Sensor Initialized Successfully
+
+--- Starting main application loop ---
+  Manufacturer ID: 0x5449
+  Device ID: 0x1050
+  Temperature: 25.23 C
+  Humidity: 48.39%
+  Manufacturer ID: 0x5449
+  Device ID: 0x1050
+  Temperature: 25.22 C
+  Humidity: 48.39%
+  Manufacturer ID: 0x5449
+  Device ID: 0x1050
+  Temperature: 25.22 C
+  Humidity: 48.39%
+  Manufacturer ID: 0x5449
+  Device ID: 0x1050
+  Temperature: 25.20 C
+  Humidity: 48.39%
+  Manufacturer ID: 0x5449
+  Device ID: 0x1050
+  Temperature: 25.20 C
+  Humidity: 48.39%
+  Manufacturer ID: 0x5449
+  Device ID: 0x1050
+  Temperature: 25.20 C
+  Humidity: 48.39%
+....

@@ -1,0 +1,40 @@
+VCD info: dumpfile dump.vcd opened for output.
+[0] TB Step 10: Simulation Start. Applying reset.
+[10000] TB Step 20: Reset released.
+[5010000] TB Step 30: --- Test 1: Write 0xCA to slave mem[2] ---
+[5046000] TB: Configuring master: iCommand=0xxx, iBytesToWrite=x, iBytesToRead=0, iSlaveAddr=0xxx
+[5055000] TB Step 40: Starting indexed write sequence.
+[5065000] TB Step 50: Waiting for indexed write to complete (oSequenceDone)...
+[13345000] TB: Write transaction complete.
+[13345000] TB Step 60: Verifying write. Checking slave's memory.
+SUCCESS: Slave memory[2] is 0xCA as expected.
+[16345000] TB Step 70: --- Test 2: Multi-write 2050 bytes to slave mem ---
+[57356000] TB: Configuring master: iCommand=0x01, iBytesToWrite=2, iBytesToRead=0, iSlaveAddr=0x2a
+[57365000] TB Step 80: Starting multi-write sequence.
+[57375000] TB Step 90: Waiting for multi-write to complete (oSequenceDone)...
+[5367375000] TB: Multi-write transaction complete.
+[5367375000] TB Step 100: Verifying multi-write. Checking slave's memory.
+SUCCESS: Slave memory updated correctly.
+[5370375000] TB Step 110: --- Test 3: Read 2048 bytes from slave memory ---
+[5370386000] TB: Configuring master: iCommand=0x01, iBytesToWrite=2049, iBytesToRead=0, iSlaveAddr=0x2a
+[5370395000] TB Step 120: Starting simple read sequence.
+[5370405000] TB Step 130: Waiting for simple read to complete (oSequenceDone)...
+[10683275000] TB: Read transaction complete.
+[10683275000] TB Step 140: Verifying multi-byte read. Checking RX buffer.
+SUCCESS: Readback byte 0 is 0xde as expected.
+SUCCESS: Readback byte 1 is 0xad as expected.
+SUCCESS: Readback byte 2 is 0xbe as expected.
+SUCCESS: Readback byte 3 is 0xef as expected.
+SUCCESS: Readback byte 4 is 0x12 as expected.
+SUCCESS: Readback byte 5 is 0x34 as expected.
+SUCCESS: Readback byte 6 is 0x55 as expected.
+SUCCESS: First 7 bytes of readback are correct. Assuming the rest of the 2048-byte transfer is also correct.
+[10686396000] TB Step 150: --- Test 6: NACK on invalid slave address ---
+[10686416000] TB: Configuring master: iCommand=0x03, iBytesToWrite=1, iBytesToRead=2048, iSlaveAddr=0x2a
+[10686425000] TB Step 160: Starting sequence to invalid address.
+[10686435000] TB Step 170: Waiting for NACK transaction to complete (oSequenceDone)...
+[10692115000] TB: NACK transaction complete.
+[10692115000] TB Step 180: Verifying NACK. Checking status register.
+SUCCESS: ACK error bit is 1 as expected after addressing non-existent slave.
+[10692115000] TB Step 190: Simulation End.
+i2c_master_top_tb.sv:304: $finish called at 10693115000 (1ps)

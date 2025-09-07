@@ -1,0 +1,164 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sun Aug 31 06:21:05 2025
+[*]
+[dumpfile] "C:\Projects\Verilog\I2C_Master\dump.vcd"
+[dumpfile_mtime] "Sat Aug 30 17:38:14 2025"
+[dumpfile_size] 633106
+[savefile] "C:\Projects\Verilog\I2C_Master\setup.gtkw"
+[timestart] 0
+[size] 1920 1009
+[pos] -1 -1
+*-15.000000 132240 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] i2c_master_top_tb.
+[treeopen] i2c_master_top_tb.i2c_master_top_inst.
+[treeopen] i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.
+[sst_width] 343
+[signals_width] 307
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.DataRxDv_r
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.DataRx_r[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.ack_bit
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.ack_error
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.bit_count[3:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.byte_count[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.clk
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.data_byte_count[2:0]
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iBytesToRead[7:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iBytesToWrite[7:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iCommand[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iCounterDone
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iQuarterBitCounter[31:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iSlaveAddr[6:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iStartSequence
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iStartSequence_sync1
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iStartSequence_sync2
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.i_scl
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.i_sda
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.i_sda_sync1
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.i_sda_sync2
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.nRst
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.next_state[3:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oCounterDone
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oDataByteAddr[2:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oDataRxDv
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oRxDataOut[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oRxDataWrEn
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oSequenceDone
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oStatusReg[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.o_scl
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.o_sda
+@c00022
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+@28
+(0)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(1)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(2)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(3)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(4)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(5)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(6)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+(7)i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iTxData[7:0]
+@1401200
+-group_end
+@28
+i2c_master_top_tb.i2c_master_top_inst.clk
+@22
+i2c_master_top_tb.i2c_master_top_inst.iBytesToRead[7:0]
+i2c_master_top_tb.i2c_master_top_inst.iBytesToWrite[7:0]
+i2c_master_top_tb.i2c_master_top_inst.iCommand[7:0]
+i2c_master_top_tb.i2c_master_top_inst.iQuarterBitCounter[31:0]
+i2c_master_top_tb.i2c_master_top_inst.iSlaveAddr[6:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.iStartSequence
+@22
+i2c_master_top_tb.i2c_master_top_inst.iTxBufDataIn[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.iTxBufWrEn
+@420
+i2c_master_top_tb.sim_step
+@22
+i2c_master_top_tb.oRxBufDataOut[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.rx_rd_ptr[2:0]
+@22
+i2c_master_top_tb.i2c_master_top_inst.oRxBufDataOut[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.core_rx_data_wr_en
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iStartSequence
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.iSlaveAddr[6:0]
+i2c_master_top_tb.i2c_master_top_inst.iTxBufDataIn[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.iTxBufWrEn
+i2c_master_top_tb.i2c_master_top_inst.nRst
+i2c_master_top_tb.i2c_master_top_inst.oDataRxDv
+@22
+i2c_master_top_tb.i2c_master_top_inst.oRxBufDataOut[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.iRxBufRdEn
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.DataRx_r[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.oSequenceDone
+@22
+i2c_master_top_tb.i2c_master_top_inst.oStatusReg[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.o_sda
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.next_state[3:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.oe_scl
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oe_sda
+i2c_master_top_tb.i2c_master_top_inst.o_scl
+@22
+i2c_master_top_tb.slave.bit_counter[3:0]
+@28
+i2c_master_top_tb.slave.state[2:0]
+i2c_master_top_tb.i2c_master_top_inst.rx_rd_ptr[2:0]
+@23
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.DataRx_r[7:0]
+@420
+i2c_master_top_tb.sim_step
+@28
+i2c_master_top_tb.slave.scl
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oe_sda
+i2c_master_top_tb.i_scl
+i2c_master_top_tb.i_sda
+@22
+i2c_master_top_tb.slave.data_shift_reg[7:0]
+@28
+i2c_master_top_tb.slave.state[2:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.oe_sda
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.rw_mode
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.sda_sync
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.startCounting
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.start_pulse
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.state[3:0]
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.status_reg[7:0]
+@28
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.tx_bit
+@22
+i2c_master_top_tb.i2c_master_top_inst.i2c_core_inst.tx_shift_reg[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
