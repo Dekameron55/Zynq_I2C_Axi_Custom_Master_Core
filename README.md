@@ -34,6 +34,7 @@ ZYNQ_I2C_Axi_Master_Core/
 └── software/
     ├── i2c_axi_master/     # C driver for the IP core
     └── hdc1080/            # Example device driver (HDC1080) using the I2C master
+    └── /.../               # Main main.c Application and PS support source code
 ```
 
 
