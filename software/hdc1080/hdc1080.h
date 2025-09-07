@@ -44,7 +44,7 @@
 #define HDC1080_CONFIG_HRES_8BIT	(2 << 8)
 
 // Conversion times in microseconds
-#define HDC1080_CONVERSION_TIME_TEMP_14BIT		6800
+#define HDC1080_CONVERSION_TIME_TEMP_14BIT		7000
 #define HDC1080_CONVERSION_TIME_HUMID_14BIT		7000
 
 /************************** Function Prototypes ******************************/
