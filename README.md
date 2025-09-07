@@ -95,6 +95,10 @@ The IP core comes with a Verilog testbench (`fpga/i2c_rtl_tb`) for verifying the
     ```sh
     vvp design.vvp
     ```
+4.  Investigate with a tool of choise e.g GtkWave
+    ```
+    gtkwave.exe .\dump.vcd .\setup1.gtkw 
+    ``
 
 ### Example Waveform
 
