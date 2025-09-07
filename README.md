@@ -26,6 +26,8 @@ This repository contains all the necessary components to simulate, synthesize, a
 ```
 PYNQ_Z2_I2C_Axi_custom_ip/
 ├── fpga/
+|   ├── i2c_fpga_axi_tb/    # Vivado test bench simulation between PS and PL using Axi VIP.
+|   ├── i2c_fpga_axi/       # Verilog source files for FPGA Zynq synthesis
 │   ├── i2c_rtl/            # Verilog source files for the IP core
 │   └── i2c_rtl_tb/         # Testbench for pure RTL simulation
 └── software/
