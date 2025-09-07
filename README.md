@@ -28,7 +28,7 @@ This repository contains all the necessary components to simulate, synthesize, a
 ZYNQ_I2C_Axi_Master_Core/
 ├── fpga/
 |   ├── i2c_fpga_axi_tb/    # Vivado test bench simulation between PS and PL using Axi VIP.
-|   ├── i2c_fpga_axi_custom/       # Verilog source files for FPGA specific Zynq synthesis.
+|   ├── i2c_fpga_axi_custom/ # Verilog source files for FPGA specific Zynq synthesis.
 │   ├── i2c_rtl/            # Verilog source files for the IP core
 │   └── i2c_rtl_tb/         # Testbench for pure RTL simulation
 └── software/
@@ -116,7 +116,7 @@ The test environment uses a simple block design where an AXI BFM acts as the pro
 
 ### AXI Simulation & Verification
 
-The AXI simulation uses a **Xilinx AXI Verification IP (VIP)** configured as a master to emulate a processor. The testbench (`I2C_Axi_Master_testbench.sv`) takes manual control of the AXI VIP, using its API to procedurally issue AXI4-Lite read and write commands to the I2C Master's registers.
+The AXI simulation uses a **AXI Verification IP (VIP)** configured as a master to emulate a processor. The custom testbench (`I2C_Axi_Master_testbench.sv`) takes manual control of the AXI VIP, using its API to procedurally issue AXI4-Lite read and write commands to the I2C Master's registers.
 
 The test sequence is as follows:
 1.  **Sanity Checks:** Performs AXI read/write operations to the Dummy and Version registers to confirm basic bus connectivity.
