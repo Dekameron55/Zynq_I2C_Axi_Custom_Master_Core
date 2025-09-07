@@ -193,7 +193,7 @@ This is the low-level driver that directly interfaces with the IP core's registe
     *   `I2C_AXI_Master_Exchange()`: Performs a write-then-read (e.g., for reading from a specific register).
 *   **Interrupt-Driven Mode:** For more complex, non-blocking applications, the driver supports interrupt-driven transactions.
     *   The `I2C_AXI_Master_Init()` function can enable interrupts in the hardware core.
-    *   **Non-Blocking (`_IT` suffix):** These are the recommended functions for production use. They start a transaction and return immediately, allowing the application to perform other tasks. Completion is handled via the ISR and an optional user callback.
+    *   **Non-Blocking (`_IT` suffix):** These are the recommended functions for optimized use. They start a transaction and return immediately, allowing the application to perform other tasks. Completion is handled via the ISR and an optional user callback.
         *   `I2C_AXI_Master_Write_IT()`
         *   `I2C_AXI_Master_Read_IT()`
         *   `I2C_AXI_Master_Exchange_IT()`
