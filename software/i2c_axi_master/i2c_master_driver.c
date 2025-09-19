@@ -99,9 +99,9 @@ I2C_AXI_Status I2C_AXI_Master_Init(I2C_AXI_Master_Driver *InstancePtr, UINTPTR B
 
     Xil_Out32(InstancePtr->BaseAddress + I2C_PRESCALER_REG_OFFSET, prescaler);
 
-    // Enable or disable interrupts in the I2C core's Interrupt Enable Register (IER)
+    // Only enable the 'Done' interrupt. The NACK status can be read from the ISR.
     if (EnableInterrupts == I2C_INTERRUPT_ENABLE) {
-        Xil_Out32(InstancePtr->BaseAddress + I2C_IER_REG_OFFSET, I2C_INT_DONE_BIT | I2C_INT_ACK_ERROR_BIT);
+        Xil_Out32(InstancePtr->BaseAddress + I2C_IER_REG_OFFSET, I2C_INT_DONE_BIT);
     } else {
         Xil_Out32(InstancePtr->BaseAddress + I2C_IER_REG_OFFSET, 0);
     }

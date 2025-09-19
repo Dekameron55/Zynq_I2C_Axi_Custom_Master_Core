@@ -350,6 +350,26 @@ This is an example trace measured on the PYNQ-Z2 board measured with an oscilosc
 | `1`    | `DONE`                | A one-cycle pulse that asserts for one clock when a transaction ends.    |
 | `2`    | `IDLE`                | A level-sensitive status. `1` indicates the core is idle and ready.      |
 
+### Interrupt Registers (IER and ISR)
+
+#### Interrupt Enable Register (IER) (`0x18`)
+
+This register is used to enable or disable individual interrupt sources by writing a `1` to the corresponding bit.
+
+| Bit(s) | Name           | Description                                                                                                                                                                                                                           |
+|:-------|:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `0`    | `Not used`     | This interrupt source is disabled in hardware. Interrupts are only generated for the `DONE` event (bit 1) to ensure stable operation. The `ACK_ERROR` status can still be checked in the ISR when a `DONE` interrupt occurs. |
+| `1`    | `DONE_IE`      | Write `1` to enable an interrupt when a transaction completes. This is the only active interrupt source and is the required setting for interrupt-driven mode. To enable interrupts, write the value **`0x02`** to this register.                                     |
+
+#### Interrupt Status Register (ISR) (`0x1C`)
+
+This register flags the events that have occurred. It is a "Write-1-to-Clear" (W1C) register, meaning that writing a `1` to a bit will clear that bit. The software driver should read this register in the ISR, process the flags, and then write the read value back to clear the handled events.
+
+| Bit(s) | Name        | Description                                                                                                                                                                                                                           |
+|:-------|:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `0`    | `ACK_ERROR` | This bit is set to `1` by the hardware when a NACK is detected.                                                                                                                                                                       |
+| `1`    | `DONE`      | This bit is set to `1` by the hardware when a transaction finishes.                                                                                                                                                                   |
+
 ---
 
 ### FIFO Operation
@@ -379,6 +399,13 @@ Prescaler Value = (AXI Clock Frequency / (4 * Target I2C Frequency)) - 1
 ---
 
 ## Version History
+
+### Version 1.3.0 (Current)
+*   **Version Register Value:** `0x00010300`
+*   **Key Features:**
+    *   **Decoupled Interrupt Logic:** The hardware interrupt signal is now only asserted for the 'Done' event. The 'ACK Error' event is still latched in the Interrupt Status Register (ISR) but no longer generates a hardware interrupt.
+    *   **Hardware:** The top-level AXI wrapper (`axi_i2c_master.v`) was updated to change the interrupt generation logic from `|(isr & ier)` to `isr[1] & ier[1]`.
+    *   **Software:** The `I2C_AXI_Master_Init()` function was updated to only enable the `I2C_INT_DONE_BIT` in the Interrupt Enable Register (IER). The interrupt handler remains capable of detecting NACK errors by reading the full ISR upon a 'Done' interrupt, thus preventing potential race conditions while preserving error-checking capabilities.
 
 ### Version 1.2.0 (Current)
 *   **Version Register Value:** `0x00010200`

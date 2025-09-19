@@ -99,7 +99,7 @@ module axi_i2c_master #(
 
     // Debug and Versioning Registers
     reg [31:0] dummy_reg;
-    localparam [31:0] VERSION = 32'h0001_0200; // Version 1.2.0.0
+    localparam [31:0] VERSION = 32'h0001_0300; // Version 1.3.0
 
     // Wires for interrupt events
     wire ack_error_event;
@@ -360,8 +360,8 @@ module axi_i2c_master #(
        end
     end
 
-    // Generate the final interrupt signal
-    assign interrupt = |(isr & ier);
+    // Generate the final interrupt signal. Only the 'Done' event triggers an interrupt.
+    assign interrupt = isr[1] & ier[1];
 
     // Combine hardware and software reset (both are active-low for the core)
     assign core_nRst = S_AXI_ARESETN & ~sw_reset;
