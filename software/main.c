@@ -90,8 +90,8 @@ int main()
     xil_printf("Reading Version Register...\n\r");
     version_data = Xil_In32(i2c_master_inst.BaseAddress + I2C_VERSION_REG_OFFSET);
 
-    if (version_data != 0x00010200) {
-         xil_printf("  ERROR: Version Register test FAILED! Expected 0x00010200, read back 0x%08X\n\r", version_data);
+    if (version_data != 0x00010300) {
+         xil_printf("  ERROR: Version Register test FAILED! Expected 0x00010300, read back 0x%08X\n\r", version_data);
     } else {
          xil_printf("  SUCCESS: Version Register test passed. Read back 0x%08X\n\r", version_data);
     }
